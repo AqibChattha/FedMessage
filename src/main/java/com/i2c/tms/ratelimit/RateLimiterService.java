@@ -1,9 +1,11 @@
 // RateLimiterService.java
 package com.i2c.tms.ratelimit;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class RateLimiterService {
     private int rateLimit = 10; // Default rate limit
 
@@ -17,5 +19,6 @@ public class RateLimiterService {
         } else {
             rateLimit = 10; // Default rate limit
         }
+        log.info("Rate limit adjusted to: {}", rateLimit);
     }
 }
